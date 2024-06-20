@@ -31,7 +31,7 @@
 > inspire and empower individuals to make positive contributions towards
 > a more sustainable future for our planet.
 
-- Author's Name: M.M.S.P.Mahara.
+- Author's Name: Sashika Piyumal
 
 - Date: 2024/04/30
 
