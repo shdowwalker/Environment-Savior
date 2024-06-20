@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="icon" href="https://i.ibb.co/Lth4YTf/icon.png" type="image/x-icon">
+    <style>
+        #thinkIMG {
+            width: 20%;
+            height: auto;
+        }
+        #imgp {
+            text-align: center;
+        }
+        
+        /* Styling for input and button */
+        input[type="text"], input[type="email"], textarea {
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: calc(100% - 22px);
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #45a049;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4CAF50;
+        }
+
+        /* Style for comment display */
+        .comment {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://i.ibb.co/Lth4YTf/icon.png" alt="logo" id="icon" width="3%" height="3%">
+        <label class="logo">Savior</label>
+        <a id="active" href="feedback.html">Feedback</a>
+        <a href="about.html">About</a>
+        <a href="solution.html">Solution</a>
+        <a href="problem.html">Problem</a>
+        <a href="index.html">Home</a>
+    </div>
+    <div class="paragraph">
+        <h2 style="text-align: center;">Give Us Your Thoughts</h2>
+        <P id="imgp"><img src="https://i.ibb.co/5jCmFL7/bkg-min.png" alt="people's thinking" id="thinkIMG"></P>
+
+        <div id="app">
+            <form @submit.prevent="addComment">
+                <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+                    <input type="text" v-model="name" placeholder="Your Name">
+                    <input type="email" v-model="email" placeholder="Your Email">
+                    <textarea v-model="newComment" placeholder="Enter your comment"></textarea>
+                    <button type="submit">Add Comment</button>
+                </div>
+            </form>
+            <!-- Display comments -->
+            <div class="comment" v-for="(comment, index) in reversedComments" :key="index">
+                <strong>{{ comment.name }}:</strong> {{ comment.text }}
+                <br>
+                <small>{{ comment.timestamp }}</small>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Savior Foundation. All rights reserved.</p>
+        <p>Follow us on 
+            <a href="#" target="_blank">Twitter</a>, 
+            <a href="https://web.facebook.com/shasika.piyumal.7" target="_blank">Facebook</a>, and 
+            <a href="https://www.instagram.com/shdow.walker/" target="_blank">Instagram</a>.
+        </p>
+        <p>Contact us: <a href="mailto:sasika.1776@gmail.com">sasika.1776@gmail.com</a></p>
+    </footer>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    comments: JSON.parse(localStorage.getItem('comments')) || [], // Load comments from localStorage
+                    name: '',
+                    email: '',
+                    newComment: '' // Variable to store new comment
+                }
+            },
+            computed: {
+                reversedComments() {
+                    return this.comments.slice().reverse(); // Reverse the array of comments
+                }
+            },
+            methods: {
+                addComment() {
+                    if (this.newComment.trim() !== '') { // Check if comment is not empty
+                        const currentTime = new Date().toLocaleString(); // Get current date and time
+                        this.comments.push({ name: this.name, email: this.email, text: this.newComment, timestamp: currentTime }); // Add comment with timestamp to the array
+                        localStorage.setItem('comments', JSON.stringify(this.comments)); // Save comments to localStorage
+                        this.name = ''; // Clear input field after adding comment
+                        this.email = ''; // Clear input field after adding comment
+                        this.newComment = ''; // Clear input field after adding comment
+                    }
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>

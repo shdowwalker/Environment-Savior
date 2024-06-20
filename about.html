@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="icon" href="https://i.ibb.co/Lth4YTf/icon.png" type="image/x-icon">
+    <style>
+        .donation-form {
+            margin-top: 20px;
+            max-width: 400px;
+            margin-bottom: 20px;
+            background-color: #00ffbb82;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            flex: 1;
+            /* Add flex: 1 to make the sections equal width */
+            margin-right: 10px;
+            /* Add margin-right for spacing */
+        }
+
+        .donation-form label {
+            font-weight: bold;
+        }
+
+        .donation-form input[type="text"],
+        .donation-form input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .donation-form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .donation-form button:hover {
+            background-color: #45a049;
+        }
+
+        .donation-details {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            flex: 1;
+            /* Add flex: 1 to make the sections equal width */
+            margin-left: 10px;
+            /* Add margin-left for spacing */
+        }
+
+        iframe {
+            border-radius: 10px;
+
+        }
+
+        #location {
+            text-align: center;
+        }
+
+        #flexabout {
+            display: flex;
+            justify-content: space-between;
+            margin-right: 5%;
+            margin-left: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="https://i.ibb.co/Lth4YTf/icon.png" alt="logo" id="icon" width="3%" height="3%">
+        <label class="logo">Savior</label>
+        <a href="Feed-bakc.html">Feedback</a>
+        <a id="active" href="about.html">About</a>
+        <a href="Solution.html">Solution</a>
+        <a href="problem.html">Problem</a>
+        <a href="index.html">Home</a>
+
+    </div>
+
+    <div class="paragraph">
+        <h2>About Saviors</h2>
+        <p>Welcome to <b>Savior</b>, your virtual sanctuary for all things green and sustainable. Our mission is to
+            empower individuals like you to make informed decisions that contribute to a healthier planet. At Savior, we
+            believe that every action counts, and we’re here to guide you through each step towards a greener lifestyle.
+            <br><br>
+            <b>Our Features</b> <br>
+        <ul style="margin-left: 50px;">
+            <li>Carbon Footprint Calculator: Understand your impact on the environment and learn how to reduce it.</li>
+            <li>
+                Recycling Guide: Navigate the complexities of recycling with our comprehensive guide.</li>
+            <li>
+                Green Living Tips: Simple, everyday changes can make a big difference. We’ll show you how.</li>
+        </ul><br><br>
+        <b>Our Interface:</b> We’ve designed Savior with you in mind. Our interface is not only intuitive but also aesthetically pleasing, making your journey through environmental education both engaging and enjoyable. Explore the various facets of the environment at your own pace, with resources and information that cater to both beginners and seasoned eco-warriors. <br>
+<br>
+       <b>Our Community:</b> Savior is more than just a website; it’s a community. We bring together local environmental events, creating a space where like-minded individuals can connect, share, and collaborate. Whether you’re looking to join a community cleanup, attend a workshop, or simply meet others who share your passion for the environment, Savior is the place to be.
+        <br>
+        <br>Join us at Savior, where every step you take is a step towards fostering positive change for our planet. Together, we can make a difference.
+
+        </p>
+
+    </div>
+    <div id="flexabout">
+        <!-- Donation form section -->
+        <section class="donation-form" id="app">
+            <h2 style="margin-bottom: 10px;">Support Our Cause</h2>
+            <p style="margin-bottom: 10px;">Your generous donation helps us make a difference. Every contribution
+                counts.</p>
+            <form @submit.prevent="submitDonation">
+                <label for="donation-name">Name:</label>
+                <input type="text" v-model="donationName" id="donation-name" name="donation-name"
+                    placeholder="Enter your name">
+
+                <label for="donation-amount" id="dnt">Donation Amount:</label>
+                <input type="number" v-model="donationAmount" id="donation-amount" name="donation-amount" min="1"
+                    placeholder="Enter amount in LKR">
+
+                <button type="submit">Donate</button>
+            </form>
+            <p id="helpUS"><img style="width: 400px; height: auto;" src="https://i.ibb.co/GQX6Hss/Help-us-min.png"
+                    alt="image of planting tree"></p>
+        </section>
+
+        <div class="paragraph" style="text-align: center; width: 25%;">
+            <h2>My details</h2>
+            <img src="https://i.ibb.co/R7Jpwdk/Solo-min.png" alt="image represent my self" style="width: 80%;">
+            <p>
+                Name: M.M.S.P.Mahara <br>
+                ID: s23010285@ou.ac.lk <br>
+                Age: 20 <br>
+                Address: Matale <br>
+            </p>
+
+        </div>
+
+        <div id="location" class="paragraph">
+            <h3>Our Location</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31648.497097630625!2d80.60810536590907!3d7.458378376093103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae344d7d465445d%3A0xd6f70562e8850dbc!2sMatale!5e0!3m2!1sen!2slk!4v1714463052654!5m2!1sen!2slk"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Savior Foundation. All rights reserved.</p>
+        <p>Follow us on
+            <a href="#" target="_blank">Twitter</a>,
+            <a href="https://web.facebook.com/shasika.piyumal.7" target="_blank">Facebook</a>, and
+            <a href="https://www.instagram.com/shdow.walker/" target="_blank">Instagram</a>.
+        </p>
+        <p>Contact us: <a href="mailto:sasika.1776@gmail.com">sasika.1776@gmail.com</a></p>
+    </footer>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

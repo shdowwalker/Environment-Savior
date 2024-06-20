@@ -1,0 +1,104 @@
+/* Global reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    background-color: #4ff9b52a; /* Change to your preferred background color */
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #011708;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.logo {
+    color: #00ff95;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.navbar a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    margin-right: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover,
+#active {
+    color: #000;
+    background-color: #00ff95;
+    border-radius: 5px;
+}
+
+/* Container styles */
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Heading styles */
+.centered {
+    font-size: 48px;
+    color: #011708; /* Dark color for heading */
+    animation: colorChange 5s infinite alternate; /* Animation for color change */
+}
+
+/* Paragraph styles */
+.paragraph {
+    margin: 20px;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #00ffbb82;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    
+}
+
+/* Footer styles */
+.footer {
+    background-color: #011708;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+}
+
+.footer a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animation for heading */
+@keyframes colorChange {
+    from {
+        color: #011708;
+    }
+    to {
+        color: #00ff95;
+    }
+}
+
+#prbimg {
+    width: 300px;
+}
